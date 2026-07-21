@@ -1,0 +1,2 @@
+# Configuración local con credenciales reales
+backend/config/database.php
