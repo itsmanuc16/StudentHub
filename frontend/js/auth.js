@@ -72,8 +72,7 @@ async function manejarRegistro(event) {
 
     try {
         await enviarDatos('registro.php', { nombre, correo, contrasena });
-        mostrarMensaje('mensaje-registro', 'Registro exitoso. Ya puedes iniciar sesión.', true);
-        event.target.reset();
+        window.location.href = 'login.html';
     } catch (error) {
         mostrarMensaje('mensaje-registro', error.message, false);
     }
