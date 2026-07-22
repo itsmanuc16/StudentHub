@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once __DIR__ . '/../../helpers/response.php';
+require_once __DIR__ . '/../../helpers/session.php';
 
-session_destroy();
+cerrarSesion();
 respuestaExitosa();
