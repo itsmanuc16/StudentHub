@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - StudentHub</title>
+</head>
+<body>
+
+    <main>
+        <h1>Crear cuenta en StudentHub</h1>
+
+        <form id="form-registro">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button type="submit">Registrarme</button>
+        </form>
+
+        <p id="mensaje-registro"></p>
+
+        <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
+    </main>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>
