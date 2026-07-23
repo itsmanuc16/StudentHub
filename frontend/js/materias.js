@@ -36,36 +36,6 @@ function renderizarMaterias(materias) {
     }).join('');
 }
 
-async function enviarDatos(endpoint, datos) {
-    const respuesta = await fetch(`${API_BASE}/${endpoint}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(datos)
-    });
-
-    const texto = await respuesta.text();
-    let contenido;
-
-    if (texto.trim() === '') {
-        throw new Error(`Respuesta vacía del servidor (${respuesta.status})`);
-    }
-
-    try {
-        contenido = JSON.parse(texto);
-    } catch (error) {
-        console.error('Error parseando JSON:', texto);
-        throw new Error('Respuesta inválida del servidor.');
-    }
-
-    if (!respuesta.ok || contenido.exito === false) {
-        throw new Error(contenido.mensaje || `Error del servidor (${respuesta.status})`);
-    }
-
-    return contenido.datos;
-}
-
 async function obtenerMaterias() {
     const respuesta = await fetch(`${API_BASE}/listar.php`, {
         method: 'GET',
@@ -107,7 +77,7 @@ async function manejarFormulario(event) {
     }
 
     try {
-        await enviarDatos('crear.php', { nombre, periodo_academico: periodoAcademico });
+        await enviarDatos(`${API_BASE}/crear.php`, { nombre, periodo_academico: periodoAcademico });
         mostrarMensaje('Materia guardada correctamente.', true);
         event.target.reset();
         await obtenerMaterias();

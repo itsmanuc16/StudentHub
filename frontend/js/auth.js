@@ -8,36 +8,6 @@ function mostrarMensaje(id, mensaje, esExito = true) {
     elemento.style.color = esExito ? '#1f7a1f' : '#b00020';
 }
 
-async function enviarDatos(endpoint, datos) {
-    const respuesta = await fetch(`${API_BASE}/${endpoint}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(datos)
-    });
-
-    const texto = await respuesta.text();
-    let contenido;
-
-    if (texto.trim() === '') {
-        throw new Error(`Respuesta vacía del servidor (${respuesta.status})`);
-    }
-
-    try {
-        contenido = JSON.parse(texto);
-    } catch (error) {
-        console.error('Error parseando JSON:', texto);
-        throw new Error('Respuesta inválida del servidor. Revisa la consola para más detalles.');
-    }
-
-    if (!respuesta.ok || contenido.exito === false) {
-        throw new Error(contenido.mensaje || `Error del servidor (${respuesta.status})`);
-    }
-
-    return contenido.datos;
-}
-
 async function manejarLogin(event) {
     event.preventDefault();
 
@@ -50,7 +20,7 @@ async function manejarLogin(event) {
     }
 
     try {
-        const datos = await enviarDatos('login.php', { correo, contrasena });
+        const datos = await enviarDatos(`${API_BASE}/login.php`, { correo, contrasena });
         mostrarMensaje('mensaje-login', `¡Bienvenido, ${datos.nombre}!`, true);
         // Aquí puedes redirigir al usuario a un dashboard.
     } catch (error) {
@@ -71,7 +41,7 @@ async function manejarRegistro(event) {
     }
 
     try {
-        await enviarDatos('registro.php', { nombre, correo, contrasena });
+        await enviarDatos(`${API_BASE}/registro.php`, { nombre, correo, contrasena });
         window.location.href = 'login.html';
     } catch (error) {
         mostrarMensaje('mensaje-registro', error.message, false);
