@@ -37,32 +37,12 @@ function renderizarMaterias(materias) {
 }
 
 async function obtenerMaterias() {
-    const respuesta = await fetch(`${API_BASE}/listar.php`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    const texto = await respuesta.text();
-    let contenido;
-
-    if (texto.trim() === '') {
-        throw new Error(`Respuesta vacía del servidor (${respuesta.status})`);
-    }
-
     try {
-        contenido = JSON.parse(texto);
+        const materias = await enviarDatosGet(`${API_BASE}/listar.php`);
+        renderizarMaterias(materias);
     } catch (error) {
-        console.error('Error parseando JSON:', texto);
-        throw new Error('Respuesta inválida del servidor.');
+        mostrarMensaje(error.message, false);
     }
-
-    if (!respuesta.ok || contenido.exito === false) {
-        throw new Error(contenido.mensaje || `Error del servidor (${respuesta.status})`);
-    }
-
-    renderizarMaterias(contenido.datos);
 }
 
 async function manejarFormulario(event) {

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudentHub</title>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="materias.html">Materias</a>
+        <button id="btn-logout">Cerrar sesión</button>
+    </nav>
+
+    <main>
+        <h1>Panel principal</h1>
+
+        <section>
+            <h2>Materias</h2>
+            <div id="resumen-materias">Cargando...</div>
+        </section>
+
+        <section>
+            <h2>Tareas próximas</h2>
+            <p>Aún no hay información de tareas disponible.</p>
+        </section>
+
+        <section>
+            <h2>Horario de hoy</h2>
+            <p>Aún no hay información de horario disponible.</p>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
