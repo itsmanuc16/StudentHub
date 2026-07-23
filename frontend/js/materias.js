@@ -26,10 +26,10 @@ function renderizarMaterias(materias) {
             minute: '2-digit'
         });
 
-        return `
+       return `
             <tr>
-                <td>${materia.nombre}</td>
-                <td>${materia.periodo_academico}</td>
+                <td>${escaparHtml(materia.nombre)}</td>
+                <td>${escaparHtml(materia.periodo_academico)}</td>
                 <td>${fecha}</td>
             </tr>
         `;

@@ -1,5 +1,7 @@
 ﻿const API_BASE = '/StudentHub/backend/api/auth';
 
+const RUTA_POST_LOGIN = 'materias.html';
+
 function mostrarMensaje(id, mensaje, esExito = true) {
     const elemento = document.getElementById(id);
     if (!elemento) return;
@@ -21,8 +23,7 @@ async function manejarLogin(event) {
 
     try {
         const datos = await enviarDatos(`${API_BASE}/login.php`, { correo, contrasena });
-        mostrarMensaje('mensaje-login', `¡Bienvenido, ${datos.nombre}!`, true);
-        // Aquí puedes redirigir al usuario a un dashboard.
+        window.location.href = RUTA_POST_LOGIN;
     } catch (error) {
         mostrarMensaje('mensaje-login', error.message, false);
     }
