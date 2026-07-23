@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materias - StudentHub</title>
+</head>
+<body>
+    <main>
+        <h1>Materias</h1>
+
+        <section>
+            <h2>Agregar materias</h2>
+
+            <form id="form-materia">
+                <label for="nombre">Nombre de la materia</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="periodo_academico">Periodo académico</label>
+                <input type="text" id="periodo_academico" name="periodo_academico" required>
+
+                <button type="submit">Guardar materia</button>
+            </form>
+
+            <p id="mensaje-materia"></p>
+        </section>
+
+        <section>
+            <h2>Listado de materias</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Periodo</th>
+                        <th>Fecha de creación</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-materias"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../js/materias.js"></script>
+</body>
+</html>
