@@ -1,6 +1,6 @@
-﻿const API_BASE = '/StudentHub/backend/api/auth';
+const API_BASE = '/StudentHub/backend/api/auth';
 
-const RUTA_POST_LOGIN = 'materias.html';
+const RUTA_POST_LOGIN = 'dashboard.html';
 
 function mostrarMensaje(id, mensaje, esExito = true) {
     const elemento = document.getElementById(id);

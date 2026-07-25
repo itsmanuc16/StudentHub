@@ -1,4 +1,4 @@
-﻿const API_BASE = '/StudentHub/backend/api/materias';
+const API_BASE = '/StudentHub/backend/api/materias';
 
 function mostrarMensaje(mensaje, esExito = true) {
     const elemento = document.getElementById('mensaje-materia');
