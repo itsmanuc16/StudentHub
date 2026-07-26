@@ -67,3 +67,13 @@ function buscarMateriaPorId($idMateria) {
 
     return $consulta->fetch(PDO::FETCH_ASSOC);
 }
+
+function obtenerMateriaPorId($idMateria) {
+    $conexion = conectarDB();
+
+    $sql = "SELECT * FROM materias WHERE id_materia = :id_materia";
+    $consulta = $conexion->prepare($sql);
+    $consulta->execute([':id_materia' => $idMateria]);
+
+    return $consulta->fetch(PDO::FETCH_ASSOC);
+}
