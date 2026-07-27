@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario - StudentHub</title>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="materias.html">Materias</a>
+        <a href="horario.html">Horario</a>
+        <button id="btn-logout" type="button">Cerrar sesión</button>
+    </nav>
+
+    <main>
+        <h1>Horario</h1>
+
+        <section>
+            <h2>Agregar bloque de horario</h2>
+
+            <form id="form-horario">
+                <label for="id_materia">Materia</label>
+                <select id="id_materia" name="id_materia" required>
+                    <option value="">Selecciona una materia</option>
+                </select>
+
+                <label for="dia_semana">Día</label>
+                <select id="dia_semana" name="dia_semana" required>
+                    <option value="">Selecciona un día</option>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>    
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+
+                <label for="hora_inicio">Hora de inicio</label>
+                <input type="time" id="hora_inicio" name="hora_inicio" required>
+
+                <label for="hora_fin">Hora de fin</label>
+                <input type="time" id="hora_fin" name="hora_fin" required>
+
+                <button type="submit">Guardar bloque</button>
+            </form>
+
+            <p id="mensaje-horario"></p>
+        </section>
+
+        <section>
+            <h2>Mi horario</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Materia</th>
+                        <th>Día</th>
+                        <th>Hora de inicio</th>
+                        <th>Hora de fin</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-horario"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/horario.js"></script>
+</body>
+</html>
