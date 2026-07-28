@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas - StudentHub</title>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="materias.html">Materias</a>
+        <a href="horario.html">Horario</a>
+        <a href="tareas.html">Tareas</a>
+        <button id="btn-logout" type="button">Cerrar sesión</button>
+    </nav>
+
+    <main>
+        <h1>Tareas</h1>
+
+        <section>
+            <h2 id="titulo-formulario">Agregar tarea</h2>
+
+            <form id="form-tarea">
+                <label for="id_materia">Materia</label>
+                <select id="id_materia" name="id_materia" required>
+                    <option value="">Selecciona una materia</option>
+                </select>
+
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="fecha_entrega">Fecha de entrega</label>
+                <input type="date" id="fecha_entrega" name="fecha_entrega" required>
+
+                <button type="submit" id="btn-guardar-tarea">Guardar tarea</button>
+                <button type="button" id="btn-cancelar-edicion" style="display: none;">Cancelar edición</button>
+            </form>
+
+            <p id="mensaje-tarea"></p>
+        </section>
+
+        <section>
+            <h2>Mis tareas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Materia</th>
+                        <th>Título</th>
+                        <th>Fecha de entrega</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-tareas"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/tareas.js"></script>
+</body>
+</html>
