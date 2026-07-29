@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas - StudentHub</title>
+</head>
+<body>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="materias.html">Materias</a>
+        <a href="horario.html">Horario</a>
+        <a href="tareas.html">Tareas</a>
+        <a href="notas.html">Notas</a>
+        <button id="btn-logout" type="button">Cerrar sesión</button>
+    </nav>
+
+    <main>
+        <h1>Notas</h1>
+
+        <section>
+            <label for="id_materia">Materia</label>
+            <select id="id_materia" name="id_materia">
+                <option value="">Selecciona una materia</option>
+            </select>
+
+            <p id="promedio-materia">Selecciona una materia para ver sus notas.</p>
+        </section>
+
+        <section>
+            <h2>Agregar nota</h2>
+
+            <form id="form-nota">
+                <label for="valor">Valor (0.00 - 5.00)</label>
+                <input type="number" id="valor" name="valor" min="0" max="5" step="0.01" required>
+
+                <label for="descripcion">Descripción (opcional)</label>
+                <input type="text" id="descripcion" name="descripcion">
+
+                <button type="submit">Guardar nota</button>
+            </form>
+
+            <p id="mensaje-nota"></p>
+        </section>
+
+        <section>
+            <h2>Notas registradas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Valor</th>
+                        <th>Descripción</th>
+                        <th>Fecha de registro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-notas"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/notas.js"></script>
+</body>
+</html>
