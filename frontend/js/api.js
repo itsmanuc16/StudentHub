@@ -63,6 +63,10 @@ async function manejarLogout() {
     window.location.href = 'login.html';
 }
 
+function formatearHora(horaConSegundos) {
+    return horaConSegundos.slice(0, 5);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const botonLogout = document.getElementById('btn-logout');
     if (botonLogout) {

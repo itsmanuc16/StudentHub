@@ -1,5 +1,13 @@
 const API_BASE_MATERIAS = '/StudentHub/backend/api/materias';
 const API_BASE_TAREAS = '/StudentHub/backend/api/tareas';
+const API_BASE_HORARIO = '/StudentHub/backend/api/horario';
+
+const DIA_ACTUAL = ['domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'][new Date().getDay()];
+
+const NOMBRES_DIAS_DASHBOARD = {
+    lunes: 'Lunes', martes: 'Martes', miercoles: 'Miércoles',
+    jueves: 'Jueves', viernes: 'Viernes', sabado: 'Sábado', domingo: 'Domingo'
+};
 
 async function cargarResumenMaterias() {
     const contenedor = document.getElementById('resumen-materias');
@@ -61,7 +69,30 @@ async function cargarResumenTareas() {
     }
 }
 
+async function cargarResumenHorario() {
+    const contenedor = document.getElementById('resumen-horario');
+    if (!contenedor) return;
+
+    try {
+        const horario = await enviarDatosGet(`${API_BASE_HORARIO}/listar.php`);
+        const bloquesDeHoy = horario.filter((bloque) => bloque.dia_semana === DIA_ACTUAL);
+
+        if (bloquesDeHoy.length === 0) {
+            contenedor.textContent = `No tienes bloques de horario registrados para hoy (${NOMBRES_DIAS_DASHBOARD[DIA_ACTUAL]}).`;
+            return;
+        }
+
+        contenedor.innerHTML = '<ul>' + bloquesDeHoy.map((bloque) => `
+            <li>${escaparHtml(bloque.nombre_materia)}:
+                ${formatearHora(bloque.hora_inicio)} - ${formatearHora(bloque.hora_fin)}</li>
+        `).join('') + '</ul>';
+    } catch (error) {
+        contenedor.textContent = 'No se pudo cargar la información de horario.';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     cargarResumenMaterias();
     cargarResumenTareas();
+    cargarResumenHorario();
 });

@@ -19,9 +19,6 @@ function mostrarMensaje(mensaje, esExito = true) {
     elemento.style.color = esExito ? '#1f7a1f' : '#b00020';
 }
 
-function formatearHora(horaConSegundos) {
-    return horaConSegundos.slice(0, 5);
-}
 
 async function cargarMateriasEnSelect() {
     const select = document.getElementById('id_materia');
