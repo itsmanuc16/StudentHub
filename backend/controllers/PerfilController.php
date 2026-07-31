@@ -35,11 +35,15 @@ function actualizarPerfilControlador($nombre, $correo) {
     respuestaExitosa();
 }
 
-function cambiarContrasenaControlador($contrasenaActual, $contrasenaNueva) {
+function cambiarContrasenaControlador($contrasenaActual, $contrasenaNueva, $confirmarContrasenaNueva) {
     $idEstudiante = obtenerIdEstudianteSesion();
 
-    if (campoVacio($contrasenaActual) || campoVacio($contrasenaNueva)) {
-        respuestaError("Debes ingresar la contraseña actual y la nueva contraseña.");
+    if (campoVacio($contrasenaActual) || campoVacio($contrasenaNueva) || campoVacio($confirmarContrasenaNueva)) {
+        respuestaError("Debes completar todos los campos de contraseña.");
+    }
+
+    if ($contrasenaNueva !== $confirmarContrasenaNueva) {
+        respuestaError("La nueva contraseña y su confirmación no coinciden.");
     }
 
     $estudiante = obtenerEstudiantePorId($idEstudiante);
