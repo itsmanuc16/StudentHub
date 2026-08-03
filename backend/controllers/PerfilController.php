@@ -49,7 +49,7 @@ function cambiarContrasenaControlador($contrasenaActual, $contrasenaNueva, $conf
     $estudiante = obtenerEstudiantePorId($idEstudiante);
 
     if (!password_verify($contrasenaActual, $estudiante['contrasena'])) {
-        respuestaError("La contraseña actual no es correcta.", 401);
+        respuestaError("La contraseña actual no es correcta.", 400);
     }
 
     $nuevoHash = password_hash($contrasenaNueva, PASSWORD_BCRYPT);

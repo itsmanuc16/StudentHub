@@ -1,0 +1,36 @@
+:root {
+    /* Colores - Tema oscuro (predeterminado) */
+    --color-fondo: #121212;
+    --color-superficie: #1e1e1e;
+    --color-texto: #e8e6e1;
+    --color-texto-secundario: #a8a49c;
+    --color-borde: #3a3a3a;
+    --color-dorado: #c9a86a;
+    --color-crema: #f0e6d2;
+    --color-exito: #7cb88f;
+    --color-error: #d98a8a;
+
+    --fuente-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --tamano-h1: 2rem;
+    --tamano-h2: 1.5rem;
+    --tamano-base: 1rem;
+    --tamano-pequeno: 0.875rem;
+
+    --espaciado-sm: 8px;
+    --espaciado-md: 16px;
+    --espaciado-lg: 32px;
+
+    --radio-borde: 6px;
+}
+
+[data-theme="claro"] {
+    --color-fondo: #faf8f5;
+    --color-superficie: #ffffff;
+    --color-texto: #2b2823;
+    --color-texto-secundario: #6b6558;
+    --color-borde: #e0dcd3;
+    --color-dorado: #a3813f;
+    --color-crema: #8a7550;
+    --color-exito: #4a8f63;
+    --color-error: #b8493f;
+}

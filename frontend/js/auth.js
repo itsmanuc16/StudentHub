@@ -7,7 +7,8 @@ function mostrarMensaje(id, mensaje, esExito = true) {
     if (!elemento) return;
 
     elemento.textContent = mensaje;
-    elemento.style.color = esExito ? '#1f7a1f' : '#b00020';
+    elemento.classList.remove('mensaje-exito', 'mensaje-error');
+    elemento.classList.add(esExito ? 'mensaje-exito' : 'mensaje-error');
 }
 
 async function manejarLogin(event) {

@@ -14,8 +14,9 @@ function mostrarMensaje(mensaje, esExito = true) {
     const elemento = document.getElementById('mensaje-tarea');
     if (!elemento) return;
 
-    elemento.textContent = mensaje;
-    elemento.style.color = esExito ? '#1f7a1f' : '#b00020';
+   elemento.textContent = mensaje;
+    elemento.classList.remove('mensaje-exito', 'mensaje-error');
+    elemento.classList.add(esExito ? 'mensaje-exito' : 'mensaje-error');
 }
 
 async function cargarMateriasEnSelect() {
