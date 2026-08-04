@@ -1,8 +1,8 @@
 const API_BASE_NOTAS = '/StudentHub/backend/api/notas';
 const API_BASE_MATERIAS = '/StudentHub/backend/api/materias';
 
-function mostrarMensaje(id, mensaje, esExito = true) {
-    const elemento = document.getElementById(id);
+function mostrarMensaje(mensaje, esExito = true) {
+    const elemento = document.getElementById('mensaje-nota');
     if (!elemento) return;
 
     elemento.textContent = mensaje;

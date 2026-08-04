@@ -12,10 +12,13 @@ nav {
     display: flex;
     align-items: center;
     gap: var(--espaciado-md);
-    padding: var(--espaciado-md) var(--espaciado-lg);
-    margin: calc(var(--espaciado-lg) * -1) calc(var(--espaciado-lg) * -1) var(--espaciado-lg) calc(var(--espaciado-lg) * -1);
-    background-color: var(--color-superficie);
-    border-bottom: 1px solid var(--color-borde);
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    margin: 0 0 var(--espaciado-lg);
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-borde);
+    border-radius: 999px;
 }
 
 nav a {
@@ -118,4 +121,53 @@ thead th {
 
 tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Interruptor de tema */
+button.interruptor-tema {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 28px;
+    padding: 0;
+    border-radius: 999px;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    cursor: pointer;
+}
+
+.interruptor-tema-icono {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.interruptor-tema-icono-luna {
+    left: 6px;
+    color: var(--color-crema);
+}
+
+.interruptor-tema-icono-sol {
+    right: 6px;
+    color: var(--color-dorado);
+}
+
+.interruptor-tema-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--color-dorado);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+[data-theme="claro"] .interruptor-tema-knob {
+    transform: translateX(24px);
+    background-color: var(--color-crema);
 }

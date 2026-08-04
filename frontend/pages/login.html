@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión - StudentHub</title>
+
+    <script>
+        (function () {
+            if (localStorage.getItem('studenthub_tema') === 'claro') {
+                document.documentElement.setAttribute('data-theme', 'claro');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
+    <button id="btn-tema" type="button" class="interruptor-tema" aria-pressed="false" aria-label="Cambiar a modo claro">
+        <span class="interruptor-tema-icono interruptor-tema-icono-luna" aria-hidden="true">&#9790;</span>
+        <span class="interruptor-tema-icono interruptor-tema-icono-sol" aria-hidden="true">&#9728;</span>
+        <span class="interruptor-tema-knob"></span>
+    </button>
+
     <main>
         <h1>Iniciar sesión en StudentHub</h1>
 
@@ -25,6 +43,7 @@
     </main>
 
     <script src="../js/api.js"></script>
+    <script src="../js/theme.js"></script>
     <script src="../js/auth.js"></script>
 </body>
 </html>

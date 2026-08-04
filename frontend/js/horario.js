@@ -11,15 +11,14 @@ const NOMBRES_DIAS = {
     domingo: 'Domingo'
 };
 
-function mostrarMensaje(id, mensaje, esExito = true) {
-    const elemento = document.getElementById(id);
+function mostrarMensaje(mensaje, esExito = true) {
+    const elemento = document.getElementById('mensaje-horario');
     if (!elemento) return;
 
     elemento.textContent = mensaje;
     elemento.classList.remove('mensaje-exito', 'mensaje-error');
     elemento.classList.add(esExito ? 'mensaje-exito' : 'mensaje-error');
 }
-
 
 async function cargarMateriasEnSelect() {
     const select = document.getElementById('id_materia');

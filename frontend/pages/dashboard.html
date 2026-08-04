@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - StudentHub</title>
+
+    <script>
+        (function () {
+            if (localStorage.getItem('studenthub_tema') === 'claro') {
+                document.documentElement.setAttribute('data-theme', 'claro');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
 
@@ -37,6 +49,7 @@
     </main>
 
     <script src="../js/api.js"></script>
+    <script src="../js/theme.js"></script>
     <script src="../js/dashboard.js"></script>
 </body>
 </html>
