@@ -125,9 +125,7 @@ tbody tr:hover {
 
 /* Interruptor de tema */
 button.interruptor-tema {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    position: relative;
     width: 52px;
     height: 28px;
     padding: 0;

@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horario - StudentHub</title>
+
+    <script>
+        (function () {
+            if (localStorage.getItem('studenthub_tema') === 'claro') {
+                document.documentElement.setAttribute('data-theme', 'claro');
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
 
@@ -14,6 +26,11 @@
         <a href="tareas.html">Tareas</a>
         <a href="notas.html">Notas</a>
         <a href="perfil.html">Perfil</a>
+        <button id="btn-tema" type="button" class="interruptor-tema" aria-pressed="false" aria-label="Cambiar a modo claro">
+            <span class="interruptor-tema-icono interruptor-tema-icono-luna" aria-hidden="true">&#9790;</span>
+            <span class="interruptor-tema-icono interruptor-tema-icono-sol" aria-hidden="true">&#9728;</span>
+            <span class="interruptor-tema-knob"></span>
+        </button>
         <button id="btn-logout" type="button">Cerrar sesión</button>
     </nav>
 
@@ -34,7 +51,7 @@
                     <option value="">Selecciona un día</option>
                     <option value="lunes">Lunes</option>
                     <option value="martes">Martes</option>
-                    <option value="miercoles">Miércoles</option>    
+                    <option value="miercoles">Miércoles</option>
                     <option value="jueves">Jueves</option>
                     <option value="viernes">Viernes</option>
                     <option value="sabado">Sábado</option>
@@ -71,6 +88,7 @@
     </main>
 
     <script src="../js/api.js"></script>
+    <script src="../js/theme.js"></script>
     <script src="../js/horario.js"></script>
 </body>
 </html>
