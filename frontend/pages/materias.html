@@ -25,7 +25,11 @@
         <a href="tareas.html">Tareas</a>
         <a href="notas.html">Notas</a>
         <a href="perfil.html">Perfil</a>
-        <button id="btn-tema" type="button">Modo claro</button>
+        <button id="btn-tema" type="button" class="interruptor-tema" aria-pressed="false" aria-label="Cambiar a modo claro">
+            <span class="interruptor-tema-icono interruptor-tema-icono-luna" aria-hidden="true">&#9790;</span>
+            <span class="interruptor-tema-icono interruptor-tema-icono-sol" aria-hidden="true">&#9728;</span>
+            <span class="interruptor-tema-knob"></span>
+        </button>
         <button id="btn-logout" type="button">Cerrar sesión</button>
     </nav>
 
