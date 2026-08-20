@@ -169,3 +169,28 @@ button.interruptor-tema {
     transform: translateX(24px);
     background-color: var(--color-crema);
 }
+
+/* Contenedor de scroll horizontal para tablas (protección universal)*/
+.tabla-contenedor {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Ajuste de legibilidad en móvil, solo para tablas compactas (Materias, Notas) */
+@media (max-width: 600px) {
+    .tabla-compacta table {
+        min-width: 520px;
+    }
+
+    .tabla-compacta th, 
+    .tabla-compacta td {
+        padding: 6px 8px;
+        font-size: var(--tamano-pequeno);
+    }
+
+    .tabla-compacta th:first-child,
+    .tabla-compacta td:first-child {
+        white-space: nowrap;
+    }
+}
