@@ -73,3 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         botonLogout.addEventListener('click', manejarLogout);
     }
 });
+
+function formatearFechaCorta(fechaHoraSQL) {
+    const soloFecha = fechaHoraSQL.split(' ')[0];
+    const [anio, mes, dia] = soloFecha.split('-');
+    return `${dia}/${mes}/${anio}`;
+}
+
