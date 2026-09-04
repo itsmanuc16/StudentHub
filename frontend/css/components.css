@@ -175,20 +175,45 @@ button.interruptor-tema {
 
 /* Contenedor de scroll horizontal para tablas (protección universal) */
 .tabla-contenedor {
+    width: 100%;
     overflow-x: auto;
 }
 
 /* Ajuste de legibilidad en móvil, solo para tablas compactas (Materias, Notas) */
 @media (max-width: 600px) {
+    nav {
+        border-radius: 16px;
+    }
+
+    .tabla-compacta table {
+        min-width: 450px;
+        table-layout: fixed;
+    }
+
     .tabla-compacta th,
     .tabla-compacta td {
         padding: 6px 8px;
         font-size: var(--tamano-pequeno);
-        white-space: nowrap;
+    }
+
+    .tabla-compacta th:nth-child(1),
+    .tabla-compacta td:nth-child(1) {
+        width: 40%;
+    }
+
+    .tabla-compacta th:nth-child(2),
+    .tabla-compacta td:nth-child(2) {
+        width: 25%;
+    }
+
+    .tabla-compacta th:nth-child(3),
+    .tabla-compacta td:nth-child(3) {
+        width: 35%;
     }
 
     .tabla-compacta .col-texto-largo {
         white-space: normal;
         word-break: break-word;
+        overflow-wrap: break-word;
     }
 }
