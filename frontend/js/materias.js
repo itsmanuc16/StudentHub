@@ -29,7 +29,7 @@ function renderizarMaterias(materias) {
 
        return `
             <tr>
-                <td>${escaparHtml(materia.nombre)}</td>
+                <td class="col-texto-largo">${escaparHtml(materia.nombre)}</td>
                 <td>${escaparHtml(materia.periodo_academico)}</td>
                 <td>${fecha}</td>
             </tr>

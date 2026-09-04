@@ -39,7 +39,7 @@ function renderizarNotas(notas) {
 
     contenedor.innerHTML = notas.map((nota) => `
         <tr>
-            <td>${escaparHtml(nota.valor)}</td>
+            <td class="col-texto-largo">${escaparHtml(nota.descripcion || '—')}</td>
             <<td>${formatearFechaCorta(nota.fecha_registro)}</td>
             <td>
                 <button type="button" class="btn-eliminar-nota" data-id="${nota.id_nota}">

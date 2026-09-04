@@ -66,6 +66,7 @@ button[type="button"]:hover {
     border-color: var(--color-texto-secundario);
 }
 
+/* Botones de eliminar: acción destructiva, tono de error en vez de dorado */
 [class*="btn-eliminar"] {
     background-color: transparent;
     color: var(--color-error);
@@ -77,6 +78,7 @@ button[type="button"]:hover {
     color: var(--color-fondo);
 }
 
+/* Formularios */
 input,
 select {
     display: block;
@@ -99,6 +101,7 @@ select:focus {
     border-color: var(--color-dorado);
 }
 
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -170,92 +173,22 @@ button.interruptor-tema {
     background-color: var(--color-crema);
 }
 
-/* Contenedor de scroll horizontal para tablas (protección universal)*/
+/* Contenedor de scroll horizontal para tablas (protección universal) */
 .tabla-contenedor {
-    width: 100%;
-    max-width: 100%;
     overflow-x: auto;
 }
 
 /* Ajuste de legibilidad en móvil, solo para tablas compactas (Materias, Notas) */
 @media (max-width: 600px) {
-    .tabla-compacta table {
-        min-width: 520px;
-    }
-
-    .tabla-compacta th, 
+    .tabla-compacta th,
     .tabla-compacta td {
         padding: 6px 8px;
         font-size: var(--tamano-pequeno);
         white-space: nowrap;
     }
 
-    .tabla-horario table {
-        min-width: 620px;
-    }
-
-    .tabla-tareas table {
-        min-width: 700px;
-    }
-
-    .tabla-horario th,
-    .tabla-horario td,
-    .tabla-tareas th,
-    .tabla-tareas td {
-        padding: 6px 8px;
-    }
-
-    .tabla-horario th:last-child,
-    .tabla-horario td:last-child,
-    .tabla-tareas th:last-child,
-    .tabla-tareas td:last-child {
-        white-space: nowrap;
-    }
-
-    .tabla-notas table {
-        min-width: 0;
-        table-layout: fixed;
-    }
-
-    .tabla-notas th,
-    .tabla-notas td {
-        overflow-wrap: break-word;
-    }
-
-    .tabla-notas th {
-        overflow-wrap: normal;
-        word-break: normal;
-        font-size: 11px;
-        letter-spacing: 0;
-    }
-
-    .tabla-notas th:nth-child(1),
-    .tabla-notas td:nth-child(1) {
-        width: 16%;
-    }
-
-    .tabla-notas th:nth-child(2),
-    .tabla-notas td:nth-child(2) {
-        width: 32%;
-        padding-right: 10px;
-    }
-
-    .tabla-notas th:nth-child(3),
-    .tabla-notas td:nth-child(3) {
-        width: 28%;
-        padding-left: 8px;
-    }
-
-    .tabla-notas th:nth-child(4),
-    .tabla-notas td:nth-child(4) {
-        width: 24%;
-        padding-left: 4px;
-        padding-right: 4px;
-    }
-
-    .tabla-notas .btn-eliminar-nota {
-        padding: 6px 8px;
-        font-size: var(--tamano-pequeno);
-        white-space: nowrap;
+    .tabla-compacta .col-texto-largo {
+        white-space: normal;
+        word-break: break-word;
     }
 }
