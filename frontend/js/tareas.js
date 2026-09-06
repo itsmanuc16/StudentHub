@@ -59,7 +59,7 @@ function renderizarTareas(tareas) {
     contenedor.innerHTML = tareas.map((tarea) => `
         <tr>
             <td>${escaparHtml(tarea.nombre_materia)}</td>
-            <td>${escaparHtml(tarea.titulo)}</td>
+            <td class="col-texto-largo">${escaparHtml(tarea.titulo)}</td>
             <td>${tarea.fecha_entrega}</td>
             <td>${construirSelectEstado(tarea)}</td>
             <td>

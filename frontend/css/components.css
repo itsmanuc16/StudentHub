@@ -185,9 +185,22 @@ button.interruptor-tema {
         border-radius: 16px;
     }
 
-    .tabla-compacta table {
-        min-width: 450px;
-        table-layout: fixed;
+    .tabla-contenedor table {
+        width: max-content;
+        min-width: 100%;
+    }
+
+    .tabla-contenedor th,
+    .tabla-contenedor td {
+        white-space: nowrap;
+    }
+
+    .tabla-contenedor .col-texto-largo {
+        min-width: 140px;
+        max-width: 240px;
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: anywhere;
     }
 
     .tabla-compacta th,
@@ -196,24 +209,7 @@ button.interruptor-tema {
         font-size: var(--tamano-pequeno);
     }
 
-    .tabla-compacta th:nth-child(1),
-    .tabla-compacta td:nth-child(1) {
-        width: 40%;
-    }
-
-    .tabla-compacta th:nth-child(2),
-    .tabla-compacta td:nth-child(2) {
-        width: 25%;
-    }
-
-    .tabla-compacta th:nth-child(3),
-    .tabla-compacta td:nth-child(3) {
-        width: 35%;
-    }
-
-    .tabla-compacta .col-texto-largo {
-        white-space: normal;
-        word-break: break-word;
-        overflow-wrap: break-word;
+    table select {
+        min-width: 110px;
     }
 }

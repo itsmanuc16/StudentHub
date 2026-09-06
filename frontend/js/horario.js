@@ -52,7 +52,7 @@ function renderizarHorario(horarios) {
 
         return `
             <tr>
-                <td>${escaparHtml(horario.nombre_materia)}</td>
+                <td class="col-texto-largo">${escaparHtml(horario.nombre_materia)}</td>
                 <td>${escaparHtml(nombreDia)}</td>
                 <td>${formatearHora(horario.hora_inicio)}</td>
                 <td>${formatearHora(horario.hora_fin)}</td>
