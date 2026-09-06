@@ -19,13 +19,7 @@ function renderizarMaterias(materias) {
     }
 
     contenedor.innerHTML = materias.map((materia) => {
-        const fecha = new Date(materia.fecha_creacion).toLocaleString('es-MX', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit'
-        });
+        const fecha = formatearFechaCorta(materia.fecha_creacion);
 
        return `
             <tr>
