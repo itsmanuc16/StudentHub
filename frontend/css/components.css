@@ -213,3 +213,16 @@ button.interruptor-tema {
         min-width: 110px;
     }
 }
+
+/* Íconos nativos de time/date: invertidos para verse claros sobre fondo oscuro */
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* En tema claro, el ícono nativo ya es oscuro y se ve bien sobre fondo claro: sin invertir */
+[data-theme="claro"] input[type="time"]::-webkit-calendar-picker-indicator,
+[data-theme="claro"] input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: none;
+}
